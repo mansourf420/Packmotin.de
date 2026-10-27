@@ -431,6 +431,10 @@ input:focus, textarea:focus { outline: none; border-color: var(--gold); box-shad
 .legal h1 { font-size: clamp(2rem, 5vw, 3rem); }
 .legal h2 { font-size: 1.35rem; margin-top: 2em; }
 .legal p, .legal li { color: var(--muted); }
+.legal ul { padding-left: 1.2em; }
+.legal li { margin-bottom: 0.35em; }
+.legal strong { color: var(--text); font-weight: 600; }
+.legal a { color: var(--gold-1); }
 .legal .todo { color: var(--gold-1); background: rgba(227, 171, 99, 0.1); border: 1px dashed var(--border-strong); padding: 2px 6px; border-radius: 6px; }
 
 /* Reveal on scroll */
