@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Packmotin – Fulfillment &amp; Content für KMU</title>
+  <meta name="description" content="Packmotin übernimmt Lagerung, Verpackung, Versand und Werbung für kleine und mittlere Unternehmen. Fulfillment &amp; Content aus einer Hand.">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta property="og:title" content="Packmotin – Fulfillment &amp; Content">
+  <meta property="og:description" content="Lagerung, Verpackung, Versand und Werbung für kleine und mittlere Unternehmen – aus einer Hand.">
+  <meta property="og:image" content="assets/og-image.jpg">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preload" href="assets/fonts/archivo-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+  <!-- Icon sprite (Lucide, ISC license) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-warehouse" viewBox="0 0 24 24"><path d="M22 8.35V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8.35A2 2 0 0 1 3.26 6.5l8-3.2a2 2 0 0 1 1.48 0l8 3.2A2 2 0 0 1 22 8.35Z"/><path d="M6 18h12"/><path d="M6 14h12"/><rect width="12" height="12" x="6" y="10"/></symbol>
+      <symbol id="i-package" viewBox="0 0 24 24"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></symbol>
+      <symbol id="i-truck" viewBox="0 0 24 24"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></symbol>
+      <symbol id="i-return" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></symbol>
+      <symbol id="i-gift" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></symbol>
+      <symbol id="i-megaphone" viewBox="0 0 24 24"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></symbol>
+      <symbol id="i-camera" viewBox="0 0 24 24"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></symbol>
+      <symbol id="i-video" viewBox="0 0 24 24"><path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"/><rect x="2" y="6" width="14" height="12" rx="2"/></symbol>
+      <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+      <symbol id="i-user" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+      <symbol id="i-plug" viewBox="0 0 24 24"><path d="M12 22v-5"/><path d="M9 8V2"/><path d="M15 8V2"/><path d="M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8Z"/></symbol>
+      <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+      <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    </defs>
+  </svg>
+
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Packmotin – zur Startseite">
+        <img src="assets/logo-mark.png" alt="" width="34" height="41">
+        <span class="brand-text"><span class="brand-pack">PACK</span><span class="brand-motin">MOTIN.DE</span></span>
+      </a>
+      <nav class="nav" id="nav" aria-label="Hauptnavigation">
+        <a href="#leistungen">Leistungen</a>
+        <a href="#content">Werbung &amp; Content</a>
+        <a href="#ablauf">Ablauf</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn btn-gold btn-sm nav-cta" href="#kontakt">Angebot anfragen</a>
+      </nav>
+      <button class="nav-toggle" type="button" aria-controls="nav" aria-expanded="false" aria-label="Menü öffnen">
+        <svg class="icon"><use href="#i-menu"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow reveal">Fulfillment &amp; Content für KMU</p>
+          <h1 class="reveal">Wir packen&nbsp;an.<br><span class="gold-text">Sie wachsen.</span></h1>
+          <p class="lead reveal">Packmotin übernimmt Lagerung, Verpackung und Versand für kleine und mittlere Unternehmen – und sorgt mit Produktfotos, Videos und Werbung dafür, dass Ihre Produkte auch verkauft werden.</p>
+          <div class="hero-actions reveal">
+            <a class="btn btn-gold" href="#kontakt">Kostenloses Angebot anfragen <svg class="icon"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-ghost" href="#leistungen">Leistungen ansehen</a>
+          </div>
+          <ul class="hero-points reveal">
+            <li><svg class="icon"><use href="#i-check"/></svg>Alles aus einer Hand</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>Persönlicher Ansprechpartner</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>Flexibel mit Ihnen skalierbar</li>
+          </ul>
+        </div>
+
+        <div class="hero-visual reveal" aria-hidden="true">
+          <img class="hero-mark" src="assets/logo-mark.png" alt="" width="425" height="512">
+          <div class="order-card">
+            <div class="order-head">
+              <span class="order-label">Auftrag</span>
+              <span class="order-id">#10482</span>
+              <span class="status-pill">Unterwegs</span>
+            </div>
+            <ol class="order-steps">
+              <li class="done"><span class="dot"><svg class="icon"><use href="#i-check"/></svg></span>Bestellung eingegangen</li>
+              <li class="done"><span class="dot"><svg class="icon"><use href="#i-check"/></svg></span>Kommissioniert</li>
+              <li class="done"><span class="dot"><svg class="icon"><use href="#i-check"/></svg></span>Verpackt</li>
+              <li class="active"><span class="dot"></span>An Versanddienstleister übergeben</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Value strip -->
+    <section class="strip" aria-label="Vorteile">
+      <div class="container strip-grid">
+        <div class="strip-item reveal"><svg class="icon"><use href="#i-user"/></svg><div><strong>Persönlich</strong><span>Fester Ansprechpartner statt Ticketsystem</span></div></div>
+        <div class="strip-item reveal"><svg class="icon"><use href="#i-layers"/></svg><div><strong>Alles aus einer Hand</strong><span>Logistik und Marketing bei einem Partner</span></div></div>
+        <div class="strip-item reveal"><svg class="icon"><use href="#i-chart"/></svg><div><strong>Skalierbar</strong><span>Wir wachsen mit Ihrem Bestellvolumen</span></div></div>
+        <div class="strip-item reveal"><svg class="icon"><use href="#i-plug"/></svg><div><strong>Einfacher Start</strong><span>Unkomplizierte Anbindung Ihres Shops</span></div></div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section" id="leistungen">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Unsere Leistungen</p>
+          <h2>Vom Wareneingang bis zur Haustür Ihrer Kunden</h2>
+          <p class="section-lead">Sie konzentrieren sich auf Produkt und Vertrieb – wir kümmern uns um alles, was danach passiert.</p>
+        </div>
+        <div class="cards">
+          <article class="card reveal">
+            <div class="card-icon"><svg class="icon"><use href="#i-warehouse"/></svg></div>
+            <h3>Lagerung</h3>
+            <p>Sichere, saubere Lagerung Ihrer Ware mit genauer Bestandsführung – Sie wissen jederzeit, was verfügbar ist.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon"><svg class="icon"><use href="#i-package"/></svg></div>
+            <h3>Pick &amp; Pack</h3>
+            <p>Wir kommissionieren jede Bestellung sorgfältig und verpacken sie produktgerecht, sicher und ansprechend.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon"><svg class="icon"><use href="#i-truck"/></svg></div>
+            <h3>Versand</h3>
+            <p>Schneller, zuverlässiger Versand an Ihre Kunden – national und international, mit Sendungsverfolgung.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon"><svg class="icon"><use href="#i-gift"/></svg></div>
+            <h3>Verpackungslösungen</h3>
+            <p>Von der Standardbox bis zur gebrandeten Verpackung mit Beilagen – für ein Unboxing, das in Erinnerung bleibt.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon"><svg class="icon"><use href="#i-return"/></svg></div>
+            <h3>Retourenmanagement</h3>
+            <p>Retouren werden geprüft, erfasst und wieder eingelagert – damit Ware schnell wieder verkaufsbereit ist.</p>
+          </article>
+          <article class="card card-highlight reveal">
+            <div class="card-icon"><svg class="icon"><use href="#i-megaphone"/></svg></div>
+            <h3>Werbung &amp; Content</h3>
+            <p>Produktfotos, Videos und Social-Media-Werbung direkt aus dem Lager – Ihre Ware ist ja schon bei uns.</p>
+            <a class="card-link" href="#content">Mehr erfahren <svg class="icon"><use href="#i-arrow"/></svg></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <section class="section section-alt" id="content">
+      <div class="container split">
+        <div class="split-copy reveal">
+          <p class="eyebrow">Werbung &amp; Content</p>
+          <h2>Mehr als Versand: <span class="gold-text">Wir machen Ihre Produkte sichtbar.</span></h2>
+          <p class="section-lead">Weil Ihre Ware ohnehin bei uns liegt, entstehen Fotos und Videos ohne Hin- und Herschicken. Das spart Zeit, Kosten und Abstimmung.</p>
+          <ul class="checklist">
+            <li><svg class="icon"><use href="#i-check"/></svg>Professionelle Produktfotos für Shop und Marktplätze</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>Kurzvideos und Unboxing-Clips für Social Media</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>Planung und Betreuung von Werbeanzeigen</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>Content und Logistik abgestimmt – ein Ansprechpartner</li>
+          </ul>
+          <a class="btn btn-gold" href="#kontakt">Content-Paket anfragen <svg class="icon"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="content-tiles reveal" aria-hidden="true">
+          <div class="tile tile-a"><svg class="icon"><use href="#i-camera"/></svg><span>Produktfotos</span></div>
+          <div class="tile tile-b"><svg class="icon"><use href="#i-video"/></svg><span>Videos &amp; Reels</span></div>
+          <div class="tile tile-c"><svg class="icon"><use href="#i-megaphone"/></svg><span>Social Ads</span></div>
+          <div class="tile tile-d"><svg class="icon"><use href="#i-chart"/></svg><span>Kampagnen</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="section" id="ablauf">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">So einfach geht's</p>
+          <h2>In vier Schritten zu Ihrem Fulfillment</h2>
+        </div>
+        <ol class="steps">
+          <li class="step reveal">
+            <span class="step-num">01</span>
+            <h3>Erstgespräch</h3>
+            <p>Wir lernen Ihr Geschäft kennen und erstellen ein passendes, transparentes Angebot.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step-num">02</span>
+            <h3>Anbindung &amp; Einlagerung</h3>
+            <p>Ihr Shop wird angebunden, Ihre Ware geht bei uns ein und wird erfasst.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step-num">03</span>
+            <h3>Wir packen &amp; versenden</h3>
+            <p>Jede Bestellung wird kommissioniert, verpackt und auf den Weg gebracht.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step-num">04</span>
+            <h3>Sie wachsen</h3>
+            <p>Mit freiem Kopf und starkem Content konzentrieren Sie sich auf Ihr Wachstum.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Audience -->
+    <section class="section section-alt" id="fuer-wen">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Für wen</p>
+          <h2>Gemacht für kleine und mittlere Unternehmen</h2>
+        </div>
+        <div class="audience">
+          <div class="audience-item reveal">
+            <h3>Online-Shops</h3>
+            <p>Sie verkaufen über Ihren eigenen Shop und wollen Versand und Lager auslagern.</p>
+          </div>
+          <div class="audience-item reveal">
+            <h3>Marken &amp; Start-ups</h3>
+            <p>Sie bauen eine Marke auf und brauchen Logistik und Content, die mitwachsen.</p>
+          </div>
+          <div class="audience-item reveal">
+            <h3>Marktplatz-Händler</h3>
+            <p>Sie verkaufen auf Marktplätzen und brauchen einen verlässlichen Fulfillment-Partner.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container narrow">
+        <div class="section-head reveal">
+          <p class="eyebrow">FAQ</p>
+          <h2>Häufige Fragen</h2>
+        </div>
+        <div class="faq">
+          <details class="reveal">
+            <summary>Für welche Unternehmen eignet sich Packmotin?<svg class="icon"><use href="#i-chevron"/></svg></summary>
+            <p>Für kleine und mittlere Unternehmen, die physische Produkte online verkaufen und Lager, Versand oder Marketing nicht mehr selbst stemmen möchten.</p>
+          </details>
+          <details class="reveal">
+            <summary>Was kostet Fulfillment bei Packmotin?<svg class="icon"><use href="#i-chevron"/></svg></summary>
+            <p>Das hängt von Ihren Produkten, dem Bestellvolumen und dem gewünschten Service ab. Nach einem kurzen Gespräch erhalten Sie ein individuelles, transparentes Angebot.</p>
+          </details>
+          <details class="reveal">
+            <summary>Kann ich nur Werbung &amp; Content buchen?<svg class="icon"><use href="#i-chevron"/></svg></summary>
+            <p>Ja. Sie können Fulfillment und Content einzeln oder kombiniert buchen. Am meisten sparen Sie, wenn beides zusammenläuft, weil Ihre Ware schon bei uns ist.</p>
+          </details>
+          <details class="reveal">
+            <summary>Wie schnell kann es losgehen?<svg class="icon"><use href="#i-chevron"/></svg></summary>
+            <p>Nach dem Erstgespräch planen wir gemeinsam die Anbindung Ihres Shops und die Einlagerung. Den genauen Zeitplan stimmen wir mit Ihnen ab.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section section-cta" id="kontakt">
+      <div class="container split">
+        <div class="split-copy reveal">
+          <p class="eyebrow">Kontakt</p>
+          <h2>Bereit, das Packen abzugeben?</h2>
+          <p class="section-lead">Erzählen Sie uns kurz von Ihrem Unternehmen. Wir melden uns mit einem unverbindlichen Angebot.</p>
+          <ul class="contact-list">
+            <li><svg class="icon"><use href="#i-mail"/></svg><a href="mailto:info@packmotin.de">info@packmotin.de</a></li>
+            <li><svg class="icon"><use href="#i-phone"/></svg><span>Telefonnummer folgt</span></li>
+            <li><svg class="icon"><use href="#i-pin"/></svg><span>Standort folgt</span></li>
+          </ul>
+        </div>
+        <form class="contact-form reveal" id="contact-form" novalidate>
+          <div class="field-row">
+            <div class="field">
+              <label for="f-name">Name *</label>
+              <input id="f-name" name="name" type="text" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="f-company">Firma</label>
+              <input id="f-company" name="company" type="text" autocomplete="organization">
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="f-email">E-Mail *</label>
+              <input id="f-email" name="email" type="email" autocomplete="email" required>
+            </div>
+            <div class="field">
+              <label for="f-phone">Telefon</label>
+              <input id="f-phone" name="phone" type="tel" autocomplete="tel">
+            </div>
+          </div>
+          <fieldset class="field">
+            <legend>Interesse an</legend>
+            <div class="chips">
+              <label class="chip"><input type="checkbox" name="interest" value="Fulfillment"><span>Fulfillment</span></label>
+              <label class="chip"><input type="checkbox" name="interest" value="Verpackung"><span>Verpackung</span></label>
+              <label class="chip"><input type="checkbox" name="interest" value="Werbung & Content"><span>Werbung &amp; Content</span></label>
+            </div>
+          </fieldset>
+          <div class="field">
+            <label for="f-message">Nachricht *</label>
+            <textarea id="f-message" name="message" rows="4" required placeholder="Was verkaufen Sie, wie viele Bestellungen pro Monat …?"></textarea>
+          </div>
+          <label class="consent">
+            <input type="checkbox" name="consent" required>
+            <span>Ich habe die <a href="datenschutz.html">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung der Anfrage zu. *</span>
+          </label>
+          <p class="form-error" id="form-error" role="alert" hidden></p>
+          <button class="btn btn-gold btn-block" type="submit">Anfrage senden <svg class="icon"><use href="#i-arrow"/></svg></button>
+          <p class="form-note">Das Absenden öffnet Ihr E-Mail-Programm mit der vorbereiteten Anfrage.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <img class="footer-logo" src="assets/logo-wordmark.png" alt="Packmotin.de" width="220" height="22">
+        <p class="footer-tag">Fulfillment &amp; Content für kleine und mittlere Unternehmen.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="#leistungen">Leistungen</a>
+        <a href="#content">Werbung &amp; Content</a>
+        <a href="#kontakt">Kontakt</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </nav>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span id="year">2026</span> Packmotin.de</p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
