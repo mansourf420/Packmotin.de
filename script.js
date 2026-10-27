@@ -4,7 +4,8 @@
   var PHONE = '0177 7578761';
   var PHONE_LINK = 'tel:+491777578761';
   var EMAIL = 'info@packmotin.de';
-  var INSTAGRAM = 'https://www.instagram.com/packmotin.de/';
+  var INSTAGRAM = 'https://ig.me/m/packmotin.de';
+  var MAILTO = 'mailto:' + 'info@packmotin.de' + '?subject=' + encodeURIComponent('Anfrage über packmotin.de');
   // Optional: URL of a backend that answers with a real AI model.
   // It receives { messages: [{ role, content }] } and must return { reply: "..." }.
   // Left empty, the assistant answers from the built-in knowledge below.
@@ -190,8 +191,8 @@
   var history = load('sessionStorage', HISTORY_KEY) || [];
 
   var contactHtml = 'Telefon: <a href="' + PHONE_LINK + '">' + PHONE + '</a>\n' +
-    'E-Mail: <a href="mailto:' + EMAIL + '">' + EMAIL + '</a>\n' +
-    'Instagram: <a href="' + INSTAGRAM + '" target="_blank" rel="noopener">@packmotin.de</a>';
+    'E-Mail: <a href="' + MAILTO + '">' + EMAIL + '</a>\n' +
+    'Instagram: <a href="' + INSTAGRAM + '">@packmotin.de</a>';
   var offerHtml = '<a href="#kontakt">Zum Anfrageformular</a>';
 
   var knowledge = [
@@ -218,7 +219,7 @@
     { keys: ['mindest', 'klein', 'wenig', 'kmu', 'startup', 'start-up', 'gross', 'menge', 'volumen', 'skalier'],
       answer: 'Wir sind auf kleine und mittlere Unternehmen spezialisiert und wachsen mit Ihrem Bestellvolumen mit. Erzählen Sie uns, wo Sie gerade stehen, dann finden wir die passende Lösung.\n\n' + offerHtml },
     { keys: ['instagram', 'insta '],
-      answer: 'Sie finden uns auf Instagram unter <a href="' + INSTAGRAM + '" target="_blank" rel="noopener">@packmotin.de</a>. Dort können Sie uns auch direkt schreiben.' },
+      answer: 'Schreiben Sie uns direkt auf Instagram: <a href="' + INSTAGRAM + '">@packmotin.de</a>. Ein Tipp auf den Link öffnet den Chat mit uns.' },
     { keys: ['kontakt', 'telefon', 'nummer', 'anruf', 'anrufen', 'erreich', 'mail', 'email', 'e-mail', 'whatsapp', 'sprechen', 'mitarbeiter', 'mensch', 'berater', 'rueckruf'],
       answer: 'Sie erreichen uns so:\n' + contactHtml + '\n\nOder Sie nutzen das ' + '<a href="#kontakt">Anfrageformular</a>.' },
     { keys: ['wo', 'standort', 'adresse', 'sitz', 'stadt', 'besichtig'],

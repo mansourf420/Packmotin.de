@@ -306,6 +306,8 @@ p { margin: 0 0 1em; }
 .contact-list .icon { color: var(--gold); }
 .contact-list a { color: var(--text); text-decoration: none; border-bottom: 1px solid var(--border-strong); }
 .contact-list a:hover { color: var(--gold-1); }
+.quick-contact { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+@media (max-width: 560px) { .quick-contact .btn { flex: 1 1 100%; } }
 
 .contact-form { background: var(--surface); border: 1px solid var(--border); border-radius: 24px; padding: 32px; box-shadow: var(--shadow); display: grid; gap: 18px; }
 .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
