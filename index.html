@@ -39,6 +39,11 @@
       <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
       <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></symbol>
       <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+      <symbol id="i-instagram" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></symbol>
+      <symbol id="i-chat" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+      <symbol id="i-send" viewBox="0 0 24 24"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></symbol>
+      <symbol id="i-bot" viewBox="0 0 24 24"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></symbol>
+      <symbol id="i-cookie" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/><path d="M8.5 8.5v.01"/><path d="M16 15.5v.01"/><path d="M12 12v.01"/><path d="M11 17v.01"/><path d="M7 14v.01"/></symbol>
       <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
     </defs>
   </svg>
@@ -51,16 +56,18 @@
         <img src="assets/logo-mark.png" alt="" width="34" height="41">
         <span class="brand-text"><span class="brand-pack">PACK</span><span class="brand-motin">MOTIN.DE</span></span>
       </a>
+      <input class="nav-check" type="checkbox" id="nav-check" aria-hidden="true" tabindex="-1">
       <nav class="nav" id="nav" aria-label="Hauptnavigation">
         <a href="#leistungen">Leistungen</a>
         <a href="#content">Werbung &amp; Content</a>
         <a href="#ablauf">Ablauf</a>
         <a href="#faq">FAQ</a>
+        <a href="#kontakt">Kontakt</a>
         <a class="btn btn-gold btn-sm nav-cta" href="#kontakt">Angebot anfragen</a>
       </nav>
-      <button class="nav-toggle" type="button" aria-controls="nav" aria-expanded="false" aria-label="Menü öffnen">
+      <label class="nav-toggle" for="nav-check" role="button" tabindex="0" aria-controls="nav" aria-expanded="false" aria-label="Menü öffnen">
         <svg class="icon"><use href="#i-menu"/></svg>
-      </button>
+      </label>
     </div>
   </header>
 
@@ -261,6 +268,10 @@
             <summary>Wie schnell kann es losgehen?<svg class="icon"><use href="#i-chevron"/></svg></summary>
             <p>Nach dem Erstgespräch planen wir gemeinsam die Anbindung Ihres Shops und die Einlagerung. Den genauen Zeitplan stimmen wir mit Ihnen ab.</p>
           </details>
+          <details class="reveal">
+            <summary>Wie erreiche ich Packmotin am schnellsten?<svg class="icon"><use href="#i-chevron"/></svg></summary>
+            <p>Telefonisch unter <a href="tel:+491777578761">0177 7578761</a>, per E-Mail an <a href="mailto:info@packmotin.de">info@packmotin.de</a> oder per Direktnachricht auf <a href="https://www.instagram.com/packmotin.de/" target="_blank" rel="noopener">Instagram</a>.</p>
+          </details>
         </div>
       </div>
     </section>
@@ -274,8 +285,8 @@
           <p class="section-lead">Erzählen Sie uns kurz von Ihrem Unternehmen. Wir melden uns mit einem unverbindlichen Angebot.</p>
           <ul class="contact-list">
             <li><svg class="icon"><use href="#i-mail"/></svg><a href="mailto:info@packmotin.de">info@packmotin.de</a></li>
-            <li><svg class="icon"><use href="#i-phone"/></svg><span>Telefonnummer folgt</span></li>
-            <li><svg class="icon"><use href="#i-pin"/></svg><span>Standort folgt</span></li>
+            <li><svg class="icon"><use href="#i-phone"/></svg><a href="tel:+491777578761">0177 7578761</a></li>
+            <li><svg class="icon"><use href="#i-instagram"/></svg><a href="https://www.instagram.com/packmotin.de/" target="_blank" rel="noopener">@packmotin.de auf Instagram</a></li>
           </ul>
         </div>
         <form class="contact-form reveal" id="contact-form" novalidate>
@@ -328,6 +339,11 @@
       <div>
         <img class="footer-logo" src="assets/logo-wordmark.png" alt="Packmotin.de" width="220" height="22">
         <p class="footer-tag">Fulfillment &amp; Content für kleine und mittlere Unternehmen.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/packmotin.de/" target="_blank" rel="noopener" aria-label="Packmotin auf Instagram"><svg class="icon"><use href="#i-instagram"/></svg></a>
+          <a href="tel:+491777578761" aria-label="Anrufen: 0177 7578761"><svg class="icon"><use href="#i-phone"/></svg></a>
+          <a href="mailto:info@packmotin.de" aria-label="E-Mail schreiben"><svg class="icon"><use href="#i-mail"/></svg></a>
+        </div>
       </div>
       <nav class="footer-nav" aria-label="Footer">
         <a href="#leistungen">Leistungen</a>
@@ -335,12 +351,65 @@
         <a href="#kontakt">Kontakt</a>
         <a href="impressum.html">Impressum</a>
         <a href="datenschutz.html">Datenschutz</a>
+        <button class="link-btn" type="button" data-cookie-settings>Cookie-Einstellungen</button>
       </nav>
     </div>
     <div class="container footer-bottom">
       <p>© <span id="year">2026</span> Packmotin.de</p>
     </div>
   </footer>
+
+  <!-- Cookie banner -->
+  <div class="cookie" id="cookie" role="dialog" aria-modal="false" aria-labelledby="cookie-title" hidden>
+    <div class="cookie-head">
+      <svg class="icon"><use href="#i-cookie"/></svg>
+      <h2 id="cookie-title">Cookies &amp; Datenschutz</h2>
+    </div>
+    <p>Wir nutzen nur technisch notwendige Speicherungen, damit die Website funktioniert (z.&nbsp;B. Ihre Cookie-Auswahl und der Chatverlauf). Optionale Dienste setzen wir nur mit Ihrer Einwilligung ein. Mehr in der <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+    <div class="cookie-options" id="cookie-options" hidden>
+      <label class="cookie-opt">
+        <input type="checkbox" checked disabled>
+        <span><strong>Notwendig</strong>Für Grundfunktionen der Seite. Immer aktiv.</span>
+      </label>
+      <label class="cookie-opt">
+        <input type="checkbox" name="statistics">
+        <span><strong>Statistik</strong>Hilft uns zu verstehen, wie die Seite genutzt wird.</span>
+      </label>
+      <label class="cookie-opt">
+        <input type="checkbox" name="marketing">
+        <span><strong>Marketing</strong>Für eingebettete Inhalte und Werbung, z.&nbsp;B. von Instagram.</span>
+      </label>
+    </div>
+    <div class="cookie-actions">
+      <button class="btn btn-gold btn-sm" type="button" data-cookie="all">Alle akzeptieren</button>
+      <button class="btn btn-ghost btn-sm" type="button" data-cookie="necessary">Nur notwendige</button>
+      <button class="link-btn" type="button" data-cookie="toggle" aria-expanded="false" aria-controls="cookie-options">Einstellungen</button>
+      <button class="btn btn-ghost btn-sm" type="button" data-cookie="save" hidden>Auswahl speichern</button>
+    </div>
+  </div>
+
+  <!-- Chatbot -->
+  <button class="chat-launcher" id="chat-launcher" type="button" aria-controls="chat" aria-expanded="false" aria-label="Chat mit dem Packmotin-Assistenten öffnen">
+    <svg class="icon icon-open"><use href="#i-chat"/></svg>
+    <svg class="icon icon-close"><use href="#i-x"/></svg>
+  </button>
+  <section class="chat" id="chat" aria-label="Packmotin-Assistent" hidden>
+    <header class="chat-head">
+      <span class="chat-avatar"><svg class="icon"><use href="#i-bot"/></svg></span>
+      <div>
+        <strong>Packmotin-Assistent</strong>
+        <span class="chat-status">Beantwortet Ihre Fragen sofort</span>
+      </div>
+      <button class="chat-close" type="button" aria-label="Chat schließen"><svg class="icon"><use href="#i-x"/></svg></button>
+    </header>
+    <div class="chat-log" id="chat-log" role="log" aria-live="polite"></div>
+    <div class="chat-suggest" id="chat-suggest"></div>
+    <form class="chat-form" id="chat-form" autocomplete="off">
+      <label class="sr-only" for="chat-input">Ihre Frage</label>
+      <input id="chat-input" type="text" placeholder="Ihre Frage …" maxlength="500">
+      <button type="submit" aria-label="Senden"><svg class="icon"><use href="#i-send"/></svg></button>
+    </form>
+  </section>
 
   <script src="script.js" defer></script>
 </body>
