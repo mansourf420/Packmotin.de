@@ -1,0 +1,11 @@
+# Always serve packmotin.de over HTTPS and without "www"
+RewriteEngine On
+
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteRule ^ https://packmotin.de%{REQUEST_URI} [L,R=301]
+
+# Tell browsers to use HTTPS for the next 6 months
+<IfModule mod_headers.c>
+  Header always set Strict-Transport-Security "max-age=15552000" env=HTTPS
+</IfModule>
