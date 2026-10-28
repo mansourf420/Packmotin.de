@@ -2,6 +2,12 @@
 <html lang="de">
 <head>
   <meta charset="utf-8">
+  <script>
+    // Send visitors on http:// or www. to https://packmotin.de (fallback when the server does not redirect)
+    if (location.protocol === 'http:' || /^www\./i.test(location.hostname)) {
+      if (/(^|\.)packmotin\.de$/i.test(location.hostname)) location.replace('https://packmotin.de' + location.pathname + location.search + location.hash);
+    }
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Fulfillment Center für Onlineshops &amp; KMU | Packmotin</title>
   <meta name="description" content="Ihr Fulfillment Center für Onlineshops &amp; KMU: Lagerung, Pick &amp; Pack, Versand, Retouren sowie Produktfotos und Werbung aus einer Hand.">
