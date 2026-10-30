@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>vincente® – handmade in Berlin</title>
+<meta name="description" content="Handgefertigte Strickmode aus Merinowolle, Kaschmir und Tencel – entworfen und gefertigt in unserem Berliner Atelier seit 2004.">
+<link rel="icon" href="img/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600&family=Fraunces:opsz,wght@9..144,400;9..144,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --red:#8c1b20; --red-dark:#6e1418; --red-soft:#b5474c;
+    --sand:#ece6e3; --cream:#faf7f4; --white:#fff;
+    --ink:#2b2222; --muted:#6f6262; --line:#e2d9d6;
+    --radius:14px; --max:1180px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--cream);color:var(--ink);font:400 17px/1.65 "Assistant",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:600;color:var(--red);line-height:1.2;margin:0 0 .5em}
+  h1{font-size:clamp(2.2rem,5vw,3.6rem)}
+  h2{font-size:clamp(1.7rem,3.4vw,2.4rem)}
+  h3{font-size:1.25rem}
+  p{margin:0 0 1em}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+  section{padding:72px 0}
+  .eyebrow{font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:var(--red-soft);font-weight:600;margin-bottom:.6em}
+  .center{text-align:center}
+  .lead{max-width:680px;margin:0 auto 2.2em;color:var(--muted)}
+
+  /* Demo note */
+  .demo-note{background:var(--ink);color:#fff;text-align:center;font-size:.8rem;padding:6px 12px;letter-spacing:.04em}
+
+  /* Announcement */
+  .announce{background:var(--red);color:#fff;text-align:center;font-size:.85rem;padding:8px 12px;letter-spacing:.05em}
+
+  /* Header */
+  header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:20px;height:76px}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+  .brand img{width:58px;height:auto;mix-blend-mode:multiply}
+  .brand span{font-family:"Fraunces",serif;font-size:1.5rem;color:var(--red);font-weight:600;letter-spacing:.01em}
+  .brand sup{font-size:.55em}
+  .menu{display:flex;gap:28px;list-style:none;margin:0;padding:0}
+  .menu a{text-decoration:none;font-weight:600;font-size:.95rem;color:var(--ink);padding:6px 0;border-bottom:2px solid transparent;transition:.2s}
+  .menu a:hover{color:var(--red);border-color:var(--red)}
+  .icons{display:flex;gap:14px}
+  .icon-btn{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;border:0;background:transparent;color:var(--red);cursor:pointer}
+  .icon-btn:hover{background:var(--sand)}
+  .burger{display:none}
+  @media (max-width:900px){
+    .menu{display:none;position:absolute;top:76px;left:0;right:0;background:#fff;flex-direction:column;gap:0;border-bottom:1px solid var(--line)}
+    .menu.open{display:flex}
+    .menu a{display:block;padding:16px 20px;border-bottom:1px solid var(--line)}
+    .burger{display:grid}
+  }
+
+
+  /* Hero */
+  .hero{padding:56px 0 72px}
+  .hero-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center}
+  .hero p{font-size:1.15rem;color:var(--muted)}
+  .hero-img{border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3.4;box-shadow:0 20px 50px -25px rgba(80,20,20,.45)}
+  .hero-img img{width:100%;height:100%;object-fit:cover;object-position:60% 70%}
+  .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+  .btn{display:inline-block;padding:14px 26px;border-radius:999px;text-decoration:none;font-weight:600;font-size:.95rem;transition:.2s}
+  .btn-primary{background:var(--red);color:#fff}
+  .btn-primary:hover{background:var(--red-dark)}
+  .btn-ghost{border:1.5px solid var(--red);color:var(--red)}
+  .btn-ghost:hover{background:var(--red);color:#fff}
+  @media (max-width:900px){.hero-grid{grid-template-columns:1fr;gap:32px}.hero-img{order:-1}}
+
+  /* Trust bar */
+  .trust{background:#fff;border-block:1px solid var(--line);padding:22px 0}
+  .trust ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;text-align:center;font-weight:600;font-size:.92rem;color:var(--red)}
+  .trust li span{display:block;font-weight:400;color:var(--muted);font-size:.85rem}
+  @media (max-width:760px){.trust ul{grid-template-columns:repeat(2,1fr);row-gap:20px}}
+
+  /* Categories */
+  .cats{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .cat{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:3/4;text-decoration:none;color:#fff;background:var(--sand)}
+  .cat img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+  .cat:hover img{transform:scale(1.04)}
+  .cat::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(40,10,10,.65),transparent 55%)}
+  .cat span{position:absolute;left:22px;bottom:20px;z-index:1;font-family:"Fraunces",serif;font-size:1.5rem}
+  .cat span::after{content:" →"}
+  .cat.gutschein{background:var(--red)}
+  .cat.gutschein img{object-fit:contain;width:72%;height:auto;position:absolute;top:40%;left:50%;transform:translate(-50%,-50%);border-radius:8px}
+  .cat.gutschein:hover img{transform:translate(-50%,-50%) scale(1.04)}
+  @media (max-width:760px){.cats{grid-template-columns:1fr 1fr}.cats .cat:first-child{grid-column:1/-1;aspect-ratio:4/3}}
+
+  /* Featured product */
+  .product{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;background:#fff;border-radius:var(--radius);padding:32px;border:1px solid var(--line)}
+  .product img{border-radius:10px;width:100%;aspect-ratio:4/5;object-fit:cover}
+  .price{font-size:1.4rem;color:var(--red);font-weight:600;margin:.4em 0 1.2em}
+  @media (max-width:760px){.product{grid-template-columns:1fr;gap:24px;padding:18px}}
+
+  /* About */
+  .about{background:var(--sand)}
+  .about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
+  .about-img{border-radius:var(--radius);overflow:hidden;background:#fff;padding:24px 0;box-shadow:0 20px 50px -30px rgba(80,20,20,.4)}
+  .about p{color:#4a3d3d}
+  @media (max-width:900px){.about-grid{grid-template-columns:1fr;gap:28px}}
+
+  /* Stories grid */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:flex;flex-direction:column;transition:.25s}
+  .card:hover{transform:translateY(-3px);box-shadow:0 18px 40px -28px rgba(80,20,20,.5)}
+  .card .thumb{width:88px;height:88px;border-radius:50%;overflow:hidden;margin-bottom:18px;background:var(--cream)}
+  .card .thumb img{width:100%;height:100%;object-fit:cover}
+  .card p{color:var(--muted);font-size:.98rem;flex:1}
+  .card a.more{font-weight:600;color:var(--red);text-decoration:none;margin-top:6px}
+  .card a.more::after{content:" →"}
+  .tag{display:inline-block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;background:var(--sand);color:var(--red);padding:3px 10px;border-radius:999px;margin-bottom:10px;align-self:flex-start;font-weight:600}
+  @media (max-width:900px){.cards{grid-template-columns:1fr 1fr}}
+  @media (max-width:600px){.cards{grid-template-columns:1fr}}
+
+  /* Reviews */
+  .reviews{background:#fff;border-block:1px solid var(--line)}
+  .stars{color:var(--red);font-size:1.5rem;letter-spacing:4px}
+  blockquote{font-family:"Fraunces",serif;font-size:clamp(1.3rem,2.6vw,1.8rem);color:var(--ink);max-width:720px;margin:18px auto 10px}
+  .reviewer{color:var(--muted)}
+
+  /* Newsletter */
+  .news{background:var(--red);color:#fff;border-radius:var(--radius);padding:44px;display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
+  .news h2{color:#fff}
+  .news form{display:flex;background:#fff;border-radius:999px;padding:5px}
+  .news input{flex:1;border:0;background:transparent;padding:12px 18px;font:inherit;outline:none;min-width:0}
+  .news button{border:0;background:var(--ink);color:#fff;border-radius:999px;padding:0 22px;font:600 .95rem "Assistant",sans-serif;cursor:pointer}
+  @media (max-width:760px){.news{grid-template-columns:1fr;padding:28px}}
+
+  /* Footer */
+  footer{background:var(--ink);color:#d8cfcf;padding:56px 0 28px;margin-top:72px;font-size:.95rem}
+  .foot{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px}
+  footer h4{color:#fff;font:600 .85rem "Assistant",sans-serif;letter-spacing:.14em;text-transform:uppercase;margin:0 0 14px}
+  footer ul{list-style:none;padding:0;margin:0}
+  footer li{margin-bottom:8px}
+  footer a{text-decoration:none;color:#d8cfcf}
+  footer a:hover{color:#fff}
+  .social{display:flex;gap:10px;margin-top:14px}
+  .social a{width:40px;height:40px;border-radius:50%;border:1px solid #5a4b4b;display:grid;place-items:center}
+  .social a:hover{background:var(--red);border-color:var(--red)}
+  .pay{display:flex;flex-wrap:wrap;gap:6px;margin-top:36px;padding-top:24px;border-top:1px solid #4a3d3d}
+  .pay span{background:#fff;color:var(--ink);font-size:.72rem;font-weight:600;padding:4px 9px;border-radius:5px}
+  .copy{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:20px;font-size:.85rem;color:#9b8d8d}
+  .copy select{background:transparent;color:#d8cfcf;border:1px solid #5a4b4b;border-radius:6px;padding:6px 10px;font:inherit}
+  @media (max-width:900px){.foot{grid-template-columns:1fr 1fr}}
+  @media (max-width:520px){.foot{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="demo-note">Demo-Entwurf für die neue vincente®-Website – Texte &amp; Bilder aus der bestehenden Seite</div>
+<div class="announce">Handgefertigt in Berlin · Seit 2004 · Mulesing-freie Merinowolle</div>
+
+<header>
+  <div class="wrap nav">
+    <button class="icon-btn burger" aria-label="Menü" onclick="document.querySelector('.menu').classList.toggle('open')">
+      <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h16M3 11h16M3 16h16"/></svg>
+    </button>
+    <a class="brand" href="#top"><img src="img/logo.jpg" alt="vincente Logo"><span>vincente<sup>®</sup></span></a>
+    <ul class="menu">
+      <li><a href="#kollektion">Kollektion</a></li>
+      <li><a href="#kollektion">Frauen</a></li>
+      <li><a href="#kollektion">Kinder/Babys</a></li>
+      <li><a href="#atelier">Atelier &amp; Kurse</a></li>
+      <li><a href="#ueber-uns">Über uns</a></li>
+    </ul>
+    <div class="icons">
+      <button class="icon-btn" aria-label="Suche"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10" cy="10" r="6.5"/><path d="m15 15 5 5"/></svg></button>
+      <button class="icon-btn" aria-label="Warenkorb"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 7h14l-1 13H5z"/><path d="M8 7a3 3 0 0 1 6 0"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">Neue Kollektion 2026</div>
+        <h1>Wir stricken für Dich!</h1>
+        <p>Der Herbst kommt und wir haben unserer Kollektion neue Farben und Modelle hinzugefügt. Im Shop finden Sie weitere gestrickte Modelle auch für Männer/Babys und Kinder.</p>
+        <div class="btns">
+          <a class="btn btn-primary" href="#kollektion">Kollektion entdecken</a>
+          <a class="btn btn-ghost" href="#atelier">Stopfkurse</a>
+        </div>
+      </div>
+      <div class="hero-img"><img src="img/hero-frau-meer.jpg" alt="Frau im roten Strickpullover am Meer"></div>
+    </div>
+  </section>
+
+  <!-- Trust -->
+  <div class="trust">
+    <ul class="wrap">
+      <li>Handmade in Berlin<span>Eigenes Atelier</span></li>
+      <li>Fullyfashion<span>An Handstrickmaschinen geformt</span></li>
+      <li>Mulesing-frei<span>Zertifizierte Merino-Wolle</span></li>
+      <li>★★★★★<span>aus 48 Bewertungen</span></li>
+    </ul>
+  </div>
+
+  <!-- Kategorien -->
+  <section id="kollektion">
+    <div class="wrap">
+      <div class="center">
+        <div class="eyebrow">Shop</div>
+        <h2>Unsere Kollektion</h2>
+        <p class="lead">Mulesing-freie Merino-Pullover, Jacken, Hosen und handgefertigte Accessoires.</p>
+      </div>
+      <div class="cats">
+        <a class="cat" href="#"><img src="img/frauen.jpg" alt="Frau im orangefarbenen Strickpullover"><span>Frauen</span></a>
+        <a class="cat" href="#"><img src="img/baby-fell.jpg" alt="Lachendes Baby in Strickdecke" style="object-position:30% 50%"><span>Kinder/Babys</span></a>
+        <a class="cat gutschein" href="#"><img src="img/gutschein.jpg" alt="vincente Gutschein"><span>Gutscheine</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Highlight-Produkt -->
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="product">
+        <img src="img/kinder-sommerkleid.jpg" alt="Kind im lila Sommerkleid aus TENCEL">
+        <div>
+          <div class="eyebrow">Highlight</div>
+          <h2>Sommerkleid aus TENCEL™ Lyocellfasern</h2>
+          <div class="price">Von €89,00 EUR</div>
+          <p style="color:var(--muted)">Unsere Sommergarne bestehen aus 100% Tencel® Lyocell-Garn.</p>
+          <div class="btns">
+            <a class="btn btn-primary" href="#">Zum Produkt</a>
+            <a class="btn btn-ghost" href="#">Alle anzeigen</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Über uns -->
+  <section class="about" id="ueber-uns">
+    <div class="wrap about-grid">
+      <div class="about-img"><img src="img/banner.jpg" alt="vincente – handmade in Berlin"></div>
+      <div>
+        <div class="eyebrow">Willkommen bei vincente!</div>
+        <h2>Strickmode aus unserem Berliner Atelier</h2>
+        <p>Entdecken Sie unsere neue Kollektion 2026 handgefertigte Strickmode aus Merinowolle, die in unserem Berliner Atelier an Handstrickmaschinen geformt wird (Fullyfashion). Entworfen von der Diplomdesignerin Birgit Tappe (UdK-Berlin). Klicken Sie durch den Onlineshop um unsere mulesing-freien Merino-Pullover, Jacken, Hosen und handgefertigten Accessoires zu entdecken.</p>
+        <p>Seit 2004 entwerfen und fertigen wir Strickmode aus feinsten Materialien wie zertifizierte Merino-Wolle, Kaschmir oder Tencel. Dabei findest du Babydecken, Strickjacken oder gestrickte Hosen für die Baby Shower Party. Auch Stulpen, Pullover oder Wollröcke zum Verschenken und für Dich …</p>
+        <a class="btn btn-primary" href="#kollektion" style="margin-top:8px">Zum Onlineshop</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Atelier & Neuigkeiten -->
+  <section id="atelier">
+    <div class="wrap">
+      <div class="center">
+        <div class="eyebrow">Atelier &amp; Neuigkeiten</div>
+        <h2>Aus der Welt von vincente®</h2>
+        <p class="lead">Kurse, Presse, Nachhaltigkeit und mehr.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="thumb"><img src="img/stopfkurs.jpg" alt="Gestopfte Stelle im Strick"></div>
+          <span class="tag">Workshop</span>
+          <h3>Stopfkurse bei vincente®</h3>
+          <p>Bei vincente finden regelmäßig Stopfkurse statt. Tomo ist Textildesignerin und zeigt Dir, wie du Schäden im Strick wirkungsvoll reparieren kannst. Die Workshops finden meist Samstags 17:00 bei vincente in der Dieffenbachstr. 15 statt.</p>
+          <a class="more" href="#">Kurs anfragen</a>
+        </article>
+        <article class="card">
+          <div class="thumb"><img src="img/rbb.jpg" alt="Dreharbeiten des RBB im Laden"></div>
+          <span class="tag">Presse</span>
+          <h3>vincente® beim RBB</h3>
+          <p>Am 4.12.25 sendete der RBB in der Sendung „der Tag“ einen kleinen Beitrag über die Zusammenarbeit von vincente und toolly. Der Beitrag von Corinna Meyer ist, wie wir finden, sehr schön geworden. Hier kannst Du ihn gucken:</p>
+          <a class="more" href="#">RBB Beitrag</a>
+        </article>
+        <article class="card">
+          <div class="thumb"><img src="img/garne.jpg" alt="Garne"></div>
+          <span class="tag">Material</span>
+          <h3>vincente®´s Garne</h3>
+          <p>Wir stellen auf Responsible Wool Standard (RWS) Wolle um. Wir sind bereits bei über 60% Tendenz steigend! Unsere Sommergarne bestehen aus 100% Tencel® Lyocell-Garn.</p>
+          <a class="more" href="#">Mehr Infos</a>
+        </article>
+        <article class="card">
+          <div class="thumb"><img src="img/oeko.jpg" alt="COSH! Öko-Bilanz 82 von 100"></div>
+          <span class="tag">Nachhaltigkeit</span>
+          <h3>vincente®´s Öko Bilanz!</h3>
+          <p>COSH! ist eine Ökoplattform, die Nachhaltigkeit und ökologisches Verhalten von Marken genau unter die Lupe nimmt. Hier könnt Ihr sehen mit welch gutem Gewissen Ihr bei uns einkaufen könnt!</p>
+          <a class="more" href="https://cosh.eco/de/vincente">cosh.eco/de/vincente</a>
+        </article>
+        <article class="card">
+          <div class="thumb"><img src="img/about.jpg" alt="Portrait"></div>
+          <span class="tag">Interview</span>
+          <h3>About vincente®!</h3>
+          <p>Ich habe Etsy ein ausführliches Interview über die Geschichte von vincente® gegeben. Falls es Euch interessiert, klickt auf den Link! Viel Spaß beim Lesen!</p>
+          <a class="more" href="#">interview/vincenteberlin</a>
+        </article>
+        <article class="card">
+          <div class="thumb"><img src="img/schultasche.jpg" alt="Schulranzen aus Bioleder von Hukkepack"></div>
+          <span class="tag">Im Laden</span>
+          <h3>Schultaschen</h3>
+          <p>In unserem Laden vertreiben wir auch die Ranzen von Hukkepack. Sie sind aus hochwertigem Bioleder. Gerade gibt es 10% auf alle vorrätigen Taschen. Wir beraten Euch gerne!</p>
+          <a class="more" href="https://www.hukkepack.de">www.hukkepack.de</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bewertungen -->
+  <section class="reviews center">
+    <div class="wrap">
+      <div class="eyebrow">Kundenstimmen</div>
+      <h2>Das sagen unsere Kunden</h2>
+      <div class="stars">★★★★★</div>
+      <p style="color:var(--muted);margin-top:4px">aus 48 Bewertungen</p>
+      <blockquote>„Super leicht und mega profi, danke schön!“</blockquote>
+      <div class="reviewer">Renata Cigler</div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section>
+    <div class="wrap">
+      <div class="news">
+        <div>
+          <h2>Newsletter</h2>
+          <p style="margin:0;opacity:.85">Neue Modelle, Farben und Kurstermine direkt in Dein Postfach.</p>
+        </div>
+        <form onsubmit="event.preventDefault();this.querySelector('button').textContent='Danke!'">
+          <input type="email" placeholder="E-Mail" required aria-label="E-Mail">
+          <button>Anmelden</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <h4>vincente®</h4>
+        <p>Handgefertigte Strickmode aus Merinowolle, Kaschmir und Tencel – handmade in Berlin seit 2004.</p>
+        <div class="social">
+          <a href="#" aria-label="Instagram"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="2" width="14" height="14" rx="4"/><circle cx="9" cy="9" r="3.3"/><circle cx="13.2" cy="4.8" r=".6" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg width="18" height="18" fill="currentColor"><path d="M10 17V10h2.3l.4-2.7H10V5.6c0-.8.3-1.3 1.4-1.3h1.4V1.9A18 18 0 0 0 10.7 1.8C8.6 1.8 7.3 3 7.3 5.3v2H5v2.7h2.3V17z"/></svg></a>
+          <a href="#" aria-label="Pinterest"><svg width="18" height="18" fill="currentColor"><path d="M9 1a8 8 0 0 0-2.9 15.4c-.1-.6-.1-1.6 0-2.3l.9-4s-.2-.5-.2-1.2c0-1.1.7-2 1.5-2 .7 0 1 .5 1 1.2 0 .7-.4 1.8-.7 2.8-.2.8.4 1.5 1.3 1.5 1.5 0 2.6-1.6 2.6-3.9 0-2-1.5-3.5-3.6-3.5-2.4 0-3.9 1.8-3.9 3.7 0 .7.3 1.5.6 2 .1.1.1.2.1.3l-.2.9c0 .2-.2.2-.3.1-1-.5-1.7-2-1.7-3.3 0-2.7 2-5.2 5.7-5.2 3 0 5.3 2.1 5.3 5 0 3-1.9 5.4-4.5 5.4-.9 0-1.7-.5-2-1l-.5 2.1c-.2.7-.7 1.7-1.1 2.3A8 8 0 1 0 9 1z"/></svg></a>
+          <a href="#" aria-label="TikTok"><svg width="18" height="18" fill="currentColor"><path d="M12.6 1h-2.7v10.6a2.3 2.3 0 1 1-2.3-2.3c.2 0 .5 0 .7.1V6.6a5 5 0 1 0 4.3 5V6.3a6 6 0 0 0 3.4 1.1V4.7A3.4 3.4 0 0 1 12.6 1z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <ul><li><a href="#kollektion">Frauen</a></li><li><a href="#kollektion">Kinder/Babys</a></li><li><a href="#kollektion">Gutscheine</a></li><li><a href="#kollektion">Alle anzeigen</a></li></ul>
+      </div>
+      <div>
+        <h4>Atelier</h4>
+        <ul><li><a href="#atelier">Stopfkurse</a></li><li><a href="#atelier">Presse</a></li><li><a href="#atelier">Nachhaltigkeit</a></li><li><a href="#ueber-uns">Über uns</a></li></ul>
+      </div>
+      <div>
+        <h4>Besuch uns</h4>
+        <ul><li>vincente®</li><li>Dieffenbachstr. 15</li><li>Berlin</li><li style="margin-top:12px"><a href="#">Impressum</a> · <a href="#">Datenschutz</a></li></ul>
+      </div>
+    </div>
+    <div class="pay">
+      <span>Apple Pay</span><span>BLIK</span><span>Google Pay</span><span>Klarna</span><span>Maestro</span><span>Mastercard</span><span>PayPal</span><span>Shop Pay</span><span>TWINT</span><span>Visa</span>
+    </div>
+    <div class="copy">
+      <span>© 2026, vincente</span>
+      <label>Land/Region <select><option>Deutschland (EUR €)</option></select></label>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
