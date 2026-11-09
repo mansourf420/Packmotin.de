@@ -222,8 +222,8 @@
       answer: 'Schreiben Sie uns direkt auf Instagram: <a href="' + INSTAGRAM + '">@packmotin.de</a>. Ein Tipp auf den Link öffnet den Chat mit uns.' },
     { keys: ['kontakt', 'telefon', 'nummer', 'anruf', 'anrufen', 'erreich', 'mail', 'email', 'e-mail', 'whatsapp', 'sprechen', 'mitarbeiter', 'mensch', 'berater', 'rueckruf'],
       answer: 'Sie erreichen uns so:\n' + contactHtml + '\n\nOder Sie nutzen das ' + '<a href="#kontakt">Anfrageformular</a>.' },
-    { keys: ['wo', 'standort', 'adresse', 'sitz', 'stadt', 'besichtig'],
-      answer: 'Zu unserem Standort und einer möglichen Besichtigung sprechen wir gern persönlich mit Ihnen. Rufen Sie einfach an: <a href="' + PHONE_LINK + '">' + PHONE + '</a>.' },
+    { boost: 1, keys: ['wo', 'standort', 'adresse', 'sitz', 'stadt', 'besichtig', 'anfahrt', 'mannheim', 'heidelberg', 'edingen', 'neckarhausen', 'wo ist euer lager', 'wo ist das lager', 'wo seid ihr', 'wo liegt', 'wo befindet'],
+      answer: 'Unser Lager liegt in Edingen-Neckarhausen (Breslauer Straße 20), zwischen Mannheim und Heidelberg. Von dort versenden wir deutschlandweit. Eine Besichtigung vereinbaren Sie am besten telefonisch: <a href="' + PHONE_LINK + '">' + PHONE + '</a>.' },
     { keys: ['danke', 'super', 'top', 'perfekt', 'cool'],
       answer: 'Sehr gern! Wenn Sie noch Fragen haben, schreiben Sie einfach. Für ein Angebot: ' + offerHtml + '.' },
     { keys: ['tschuess', 'bye', 'ciao', 'auf wiedersehen'],
@@ -247,7 +247,7 @@
         var needle = key.length <= 3 ? ' ' + key + ' ' : key.length === 4 ? ' ' + key : key;
         if (q.indexOf(needle) !== -1) score += key.length > 4 ? 2 : 1;
       });
-      // Price questions win over the topic they mention ("Was kostet ein Video?")
+      // Price and location questions win over the topic they mention ("Was kostet ein Video?", "Wo ist euer Lager?")
       if (score && entry.boost) score += entry.boost;
       if (score > bestScore) { best = entry; bestScore = score; }
     });
